@@ -22,7 +22,8 @@ docker run -it --rm \
   n8nio/n8n
 ```
 ### my_workflow_telegram
-my_workflow_telegram.json is the workflow for sending DogeCoin price, every minute, to telegram using telegram bot token.
+my_workflow_telegram.json is the workflow for sending DogeCoin price, every minute, to telegram using telegram bot token.<br>
+![workflow1](images/workflow1.png)
 
 
 
