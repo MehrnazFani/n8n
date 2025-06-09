@@ -1,0 +1,170 @@
+{
+  "name": "My workflow 3",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "minutes",
+              "minutesInterval": 1
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -420,
+        60
+      ],
+      "id": "29e8a648-a8d2-4b8c-a8d3-9adbd302d4c8",
+      "name": "Schedule Trigger"
+    },
+    {
+      "parameters": {
+        "url": "https://api.diadata.org/v1/assetQuotation/Dogechain/0x0000000000000000000000000000000000000000",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -200,
+        60
+      ],
+      "id": "85eb15cf-5874-4de3-aea3-7a0aae44884f",
+      "name": "HTTP Request"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "33de02db-2b40-42db-b2a2-e241dff1bd22",
+              "leftValue": "={{ $json.Price }}",
+              "rightValue": 0.16,
+              "operator": {
+                "type": "number",
+                "operation": "lt"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        20,
+        60
+      ],
+      "id": "cdb5169c-071a-4b7a-ada7-2a13f7ef6357",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "chatId": "-1002731556766",
+        "text": "=The price  is good. Dogecoin price is {{ $('HTTP Request').item.json.Price }}",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        280,
+        0
+      ],
+      "id": "8ad555c3-262b-41bd-83e7-65271d6309bc",
+      "name": "Telegram",
+      "webhookId": "41627443-401e-4a21-9246-2616cbc10869",
+      "credentials": {
+        "telegramApi": {
+          "id": "SaULDo2V3RY26raO",
+          "name": "Telegram account 3"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "-1002731556766",
+        "text": "=The price  is bad donot sell. Dogecoin price is {{ $('HTTP Request').item.json.Price }}",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        300,
+        140
+      ],
+      "id": "1263a016-0c53-4987-8f51-cfab20694404",
+      "name": "Telegram1",
+      "webhookId": "41627443-401e-4a21-9246-2616cbc10869",
+      "credentials": {
+        "telegramApi": {
+          "id": "SaULDo2V3RY26raO",
+          "name": "Telegram account 3"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Telegram",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Telegram1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "37069bfc-9fd6-4840-bc76-0556fd47184b",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "a76568c1c8b8baca42440d7f611a7ea100c33ed4b9e0ebf805dc07fb34095e53"
+  },
+  "id": "1S9fTgRMqyximdQe",
+  "tags": []
+}
