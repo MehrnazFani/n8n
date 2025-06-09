@@ -23,17 +23,15 @@ docker run -it --rm \
 ```
 ### WorkFlow1: my_workflow_telegram
 **my_workflow_telegram.json** is the workflow for sending DogeCoin price, every minute, to telegram using telegram bot token.<br>
-<img src="images/workflow1.png" alt="Description" width="500"/>
+- img src="images/workflow1.png" alt="Description" width="500"/>
 To build this work flow:<br>
-> In **Http request module** use **GET**  and the  **API key**, for Dogecoin price, from [this link](https://www.diadata.org/app/price/asset/Dogechain/0x0000000000000000000000000000000000000000/
-
-)<br>
-> In **Telegram Module** you need credentials that includes Token and Chat ID, use the follwoing steps:
-- Have a chat with BotFather to get your token:
-- create a new bot: /newbot
-- name your bot: yourname stream test
-- username for your bot: yournamestreambot 
-- you will get token
+- In **Http request module** use **GET**  and the  **API key**, for Dogecoin price, from [https://www.diadata.org/app/price/asset/Dogechain/0x0000000000000000000000000000000000000000/][this link]<br>-
+- In **Telegram Module** you need credentials that includes Token and Chat ID, use the follwoing steps:
+> Have a chat with BotFather to get your token:
+> create a new bot: /newbot
+> name your bot: yourname stream test
+> username for your bot: yournamestreambot 
+> you will get token
 
 
 
