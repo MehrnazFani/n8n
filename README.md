@@ -1,4 +1,4 @@
-# n8n workflow
+# n8n workflows
 n8n: An Open-Source Low-Code/No-Code Workflow Automation Tool.
 
 ### Install Docker
@@ -25,7 +25,7 @@ docker run -it --rm \
 **my_workflow_telegram.json** is the workflow for sending DogeCoin price, every minute, to telegram using telegram bot token.<br>
 <img src="images/workflow1.png" alt="Description" width="500"/>
 To build this work flow:<br>
-- In **Http request module** use **GET**  and the  **API key**, for Dogecoin price, from [https://www.diadata.org/app/price/asset/Dogechain/0x0000000000000000000000000000000000000000/](this link)<br>-
+- In **Http request module** use **GET**  and the  **API key**, for Dogecoin price, from [this link](https://www.diadata.org/app/price/asset/Dogechain/0x0000000000000000000000000000000000000000/) <br>
 - In **Telegram Module** you need **Token** and **Chat ID**, follow the below steps to get them:
 -  Have a chat with **@BotFather** to get your token:<br>
 > create a new bot: */newbot* <br>
@@ -49,7 +49,7 @@ In **my_workflow_telegram_discord.json** message will also be send to a discord 
 
 ### WorkFlow3: my_workflow_ai_agent
 The third workflow is **my_workflow_ai_agent.json** that uses **ollama** and **llama3.2** as the language model agent and via an http request and Webhook sends message to Discord. <br>
-<img src="images/workflow2.png" alt="Description" width="500"/> <br>
+<img src="images/workflow3.png" alt="Description" width="500"/> <br>
 
 - Install locally Ollma on your machine: [https://ollama.com/download](https://ollama.com/download) <br>
 
