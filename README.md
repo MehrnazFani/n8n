@@ -27,11 +27,11 @@ docker run -it --rm \
 To build this work flow:<br>
 - In **Http request module** use **GET**  and the  **API key**, for Dogecoin price, from [https://www.diadata.org/app/price/asset/Dogechain/0x0000000000000000000000000000000000000000/][this link]<br>-
 - In **Telegram Module** you need credentials that includes Token and Chat ID, use the follwoing steps:
-> Have a chat with BotFather to get your token:
-> create a new bot: /newbot
-> name your bot: yourname stream test
-> username for your bot: yournamestreambot 
-> you will get token
+* Have a chat with BotFather to get your token:<br>
+> create a new bot: */newbot* <br>
+> name your bot: *yourname stream test* <br>
+> username for your bot: *yournamestreambot* <br>
+> you will get token <br>
 
 
 
