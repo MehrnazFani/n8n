@@ -23,7 +23,7 @@ docker run -it --rm \
 ```
 ### WorkFlow1: my_workflow_telegram
 **my_workflow_telegram.json** is the workflow for sending DogeCoin price, every minute, to telegram using telegram bot token.<br>
-< img src="images/workflow1.png" alt="Description" width="500"/>
+<img src="images/workflow1.png" alt="Description" width="500"/>
 To build this work flow:<br>
 - In **Http request module** use **GET**  and the  **API key**, for Dogecoin price, from [https://www.diadata.org/app/price/asset/Dogechain/0x0000000000000000000000000000000000000000/](this link)<br>-
 - In **Telegram Module** you need **Token** and **Chat ID**, follow the below steps to get them:
@@ -39,7 +39,7 @@ To build this work flow:<br>
 
 ### WorkFlow2: my_workflow_telegram_discord
 In **my_workflow_telegram_discord.json** message will also be send to a discord channel.
-< img src="images/workflow2.png" alt="Description" width="500"/>
+<img src="images/workflow2.png" alt="Description" width="500"/>
 - In **Discord Module** you can use the **Webhook** you created in your discord app following the below steps: <br>
 > Create a new server in your discord app <br>
 > Create a new channel in your server <br>
