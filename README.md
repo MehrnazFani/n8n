@@ -26,12 +26,31 @@ docker run -it --rm \
 < img src="images/workflow1.png" alt="Description" width="500"/>
 To build this work flow:<br>
 - In **Http request module** use **GET**  and the  **API key**, for Dogecoin price, from [https://www.diadata.org/app/price/asset/Dogechain/0x0000000000000000000000000000000000000000/](this link)<br>-
-- In **Telegram Module** you need credentials that includes Token and Chat ID, use the follwoing steps:
-* Have a chat with BotFather to get your token:<br>
+- In **Telegram Module** you need **Token** and **Chat ID**, follow the below steps to get them:
+-  Have a chat with **@BotFather** to get your token:<br>
 > create a new bot: */newbot* <br>
 > name your bot: *yourname stream test* <br>
 > username for your bot: *yournamestreambot* <br>
 > you will get token <br>
+-  To get Chat ID follow the below steps:
+> Create a test channel in telegram and send a message (e.g. hello) there <br>
+> Add *yournamestreambot* as an administrator in your  test channel <br>
+> Forward the hello message to **@get_id_bot**, so you will get Chat ID <br>
+
+### WorkFlow2: my_workflow_telegram_discord
+In **my_workflow_telegram_discord.json** message will also be send to a discord channel.
+< img src="images/workflow2.png" alt="Description" width="500"/>
+- In **Discord Module** you can use the **Webhook** you created in your discord app following the below steps: <br>
+> Create a new server in your discord app <br>
+> Create a new channel in your server <br>
+> Go to Edit channel and select integration <br>
+> Create webhook <br>
+> Copy webhook URL and use it in credential setting of Discord in n8n workflow<br>
+
+### WorkFlow3: my_workflow_ai_agent
+
+
+
 
 
 
